@@ -1,1 +1,1 @@
-bundle exec jekyll liveserve -l
+bundle exec jekyll serve -l
