@@ -83,7 +83,16 @@
         }
 
     }
-
+    .paper-link {
+        text-decoration: none;
+        color: #0073e6;
+        font-weight: bold;
+    }
+    
+    .paper-link:hover {
+        text-decoration: underline;
+    }
+    
 
 }
 

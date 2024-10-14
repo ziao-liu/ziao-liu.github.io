@@ -19,9 +19,7 @@ redirect_from:
 
 I’m Ziao Liu, a first-year graduate student at Zhejiang University (ZJU). I’m a member of the <a href='https://zjuidg.org'>ZJUIDG</a> Lab, co-supervised by <a href='https://ssxiexiao.github.io/'>Prof. Xiao Xie</a> and <a href='http://www.ycwu.org/'>Prof. Yingcai Wu</a>. I received my bachelor’s degree of Data Science and Big Data Technology at Chongqing Univeristy (CQU), where I was supervised by <a href='http://www.cse.cqu.edu.cn/info/2095/5360.htm'>Prof. Haibo Hu</a> and was part of the CQU-VIVA Lab.
 
-My research interest includes sports analytics.
-
-<!-- My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
+My research focuses on data visualization and human-computer interaction (HCI) within the domain of sports. Currently, I am exploring the integration of large language models (LLMs) into sports analytics, particularly applying them in tactical and strategy analysis.
 
 # 🔥 News
 
@@ -43,11 +41,10 @@ My research interest includes sports analytics.
 
 **Ziao Liu**, Xiao Xie, Moqi He, Wenshuo Zhao, Yihong Wu, Liqi Cheng, Hui Zhang, and Yingcai Wu
 
-IEEE Transactions on Visualization and Computer Graphics (VIS'24), 2024
+IEEE Transactions on Visualization and Computer Graphics (VIS'24)
 
-To appear.
-
-<!-- [Paper]() -->
+<a href="../docs/Smartboard.pdf" class="paper-link">PDF</a> |
+<a href="https://doi.org/10.1109/TVCG.2024.3456200" class="paper-link">DOI</a>
 
   </div>
 </div>
@@ -62,12 +59,3 @@ To appear.
 
 - _2023.09 - now_ &nbsp;School of Education, Zhejiang University (ZJU).
 - _2019.09 - 2023.06_ &nbsp;School of Big Data and Software Engineering, Chongqing University (CQU).
-
-<!-- # 💬 Invited Talks
-
-- _2021.06_, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.
-- _2021.03_, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. \| [\[video\]](https://github.com/) -->
-
-<!-- # 💻 Internships
-
-- _2019.05 - 2020.02_, [Lorem](https://github.com/), China. -->

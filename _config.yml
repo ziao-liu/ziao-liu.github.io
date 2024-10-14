@@ -24,7 +24,7 @@ author:
   name: "Ziao Liu"
   avatar: "images/android-chrome-512x512.png"
   bio: "Zhejiang University"
-  location: "Hangzhou, China1231231"
+  location: "Hangzhou, China"
   employer:
   pubmed:
   googlescholar: # "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
@@ -64,7 +64,6 @@ include:
   - _pages
   - files
 exclude:
-  - docs
   - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"
