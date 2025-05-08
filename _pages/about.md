@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I’m Ziao Liu (刘子奥), a first-year graduate student at Zhejiang University (ZJU). I’m a member of the <a href='https://zjuidg.org'>ZJUIDG</a> Lab, co-supervised by <a href='https://ssxiexiao.github.io/'>Prof. Xiao Xie</a>, <a href='https://person.zju.edu.cn/en/0014015'>Prof. Hui Zhang</a>, and <a href='http://www.ycwu.org/'>Prof. Yingcai Wu</a>. I received my bachelor’s degree of Data Science and Big Data Technology at Chongqing Univeristy (CQU), where I was supervised by <a href='http://www.cse.cqu.edu.cn/info/2095/5360.htm'>Prof. Haibo Hu</a> and was part of the CQU-VIVA Lab.
+I’m Ziao Liu (刘子奥), a second-year graduate student at Zhejiang University (ZJU). I’m a member of the <a href='https://zjuidg.org'>ZJUIDG</a> Lab, co-supervised by <a href='https://ssxiexiao.github.io/'>Prof. Xiao Xie</a>, <a href='https://person.zju.edu.cn/en/0014015'>Prof. Hui Zhang</a>, and <a href='http://www.ycwu.org/'>Prof. Yingcai Wu</a>. I received my bachelor’s degree of Data Science and Big Data Technology at Chongqing Univeristy (CQU), where I was supervised by <a href='http://www.cse.cqu.edu.cn/info/2095/5360.htm'>Prof. Haibo Hu</a> and was part of the CQU-VIVA Lab.
 
 My research focuses on data visualization and human-computer interaction (HCI) within the domain of sports. Currently, I am exploring the integration of large language models (LLMs) into sports analytics, particularly applying them in tactical and strategy analysis.
 
@@ -48,7 +48,26 @@ IEEE Transactions on Visualization and Computer Graphics (VIS'24)
 
   </div>
 </div>
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">PVIS 2025</div>
+      <img src='images/hoopscouter.png' alt="sym" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text' markdown="1">
 
+**Visual Analytics of Ball Handlers’ Decisions in Basketball Games**
+
+Yihong Wu, **Ziao Liu**, Liqi Cheng, Moqi He, Dazhen Deng, Xiao Xie, Hui Zhang, and Yingcai Wu
+
+IEEE Pacific Visualization Conference (PVIS'25)
+
+<!-- <a href="../docs/Smartboard.pdf" class="paper-link">PDF</a> |
+<a href="https://doi.org/10.1109/TVCG.2024.3456200" class="paper-link">DOI</a> -->
+
+  </div>
+</div>
 # 🎖 Honors and Awards
 
 - _2023.06_ &nbsp;Outstanding Graduate of Chongqing University (CQU).
