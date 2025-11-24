@@ -12,6 +12,7 @@ permalink: /blog/:year/:month/:title.html
 
 sass:
   style: compressed
+  sass_dir: _sass
 
 collections:
   publications:
