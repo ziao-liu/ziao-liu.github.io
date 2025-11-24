@@ -11,8 +11,14 @@
   },
   "routes": [
     {
-      "pattern": "www.ziaoliu.com",
-      "custom_domain": true
+      "pattern": "ziaoliu.com/*",
+      "custom_domain": true,
+      "override_existing_dns_record": true
+    },
+    {
+      "pattern": "www.ziaoliu.com/*",
+      "custom_domain": true,
+      "override_existing_dns_record": true
     }
   ]
 }
