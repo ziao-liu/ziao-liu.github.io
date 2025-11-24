@@ -4,7 +4,7 @@ email: ziao_liu@outlook.com
 description: > # this means to ignore newlines until "baseurl:"
   PhD Student at ZJU
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ziao-liu.github.io" # the base hostname & protocol for your site
+url: "https://ziaoliu.com" # the base hostname & protocol for your site
 production_url: "https://ziaoliu.com"
 github_username: ziao-liu
 permalink: /blog/:year/:month/:title.html
