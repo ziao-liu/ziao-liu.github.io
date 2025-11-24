@@ -1,322 +1,227 @@
-/* ==========================================================================
-   BASE ELEMENTS
-   ========================================================================== */
+@use "sass:color";
+@use "_vars" as *;
+
+/**
+ * Basic styling
+ */
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
 html {
-  /* sticky footer fix */
-  position: relative;
-  min-height: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: color.adjust($text-color, $lightness: -10%);
+  background-color: $background-color;
+
+  text-rendering: optimizeLegibility;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: auto;
+
+  box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  padding-bottom: 0em;
-  color: $text-color;
-  font-family: $global-font-family;
-  line-height: 1.5;
-
-  &.overflow--hidden {
-    /* when primary navigation is visible, the content in the background won't scroll */
-    overflow: hidden;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0 0.5em;
-  line-height: 1.2;
-  font-family: $header-font-family;
-  font-weight: bold;
-}
-
-h1 {
-  // margin: 4em 0 0.5em;
-  margin-top: 1em;
-  font-size: $type-size-3;
-}
-
-h2 {
-  font-size: $type-size-4;
-}
-
-h3 {
-  font-size: $type-size-5;
-}
-
-h4 {
-  font-size: $type-size-6;
-}
-
-h5 {
-  font-size: $type-size-6;
-}
-
-h6 {
-  font-size: $type-size-6;
-}
-
-small, .small {
-  font-size: $type-size-6;
-}
-
-p {
-  margin-bottom: 0.5em;
-}
-
-u,
-ins {
-  text-decoration: none;
-  border-bottom: 1px solid $text-color;
-  a {
-    color: inherit;
-  }
-}
-
-ul {
-  padding-inline-start: 2em;
-  margin-block-start: 0.5em;
-}
-
-del a {
-  color: inherit;
-}
-
-/* reduce orphans and widows when printing */
-
-p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
-  orphans: 3;
-  widows: 3;
-}
-
-/* abbreviations */
-
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: none;
-  cursor: help;
-  border-bottom: 1px dotted $text-color;
-}
-
-/* blockquotes */
-
-blockquote {
-  margin: 2em 1em 2em 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  font-style: italic;
-  border-left: 0.25em solid $primary-color;
-
-  cite {
-    font-style: italic;
-
-    &:before {
-      content: "\2014";
-      padding-right: 5px;
-    }
-  }
-}
-
-/* links */
-
-a {
-  
-  &:focus {
-    @extend %tab-focus;
-  }
-
-  &:hover,
-  &:active {
-    outline: 0;
-  }
-}
-
-/* code */
-
-tt, code, kbd, samp, pre {
-  font-family: $monospace;
-}
-
-pre {
-  overflow-x: auto; /* add scrollbars to wide code blocks*/
-}
-
-p > code,
-a > code,
-li > code,
-figcaption > code,
-td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: $type-size-6;
-  background: $code-background-color;
-  border: 1px solid $lighter-gray;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-
-  &:before, &:after {
-    letter-spacing: -0.2em;
-    content: "\00a0"; /* non-breaking space*/
-  }
-}
-
-/* horizontal rule */
-
-hr {
-  display: block;
-  margin: 1em 0;
-  border: 0;
-  border-top: 1px solid $border-color;
-}
-
-/* lists */
-
-ul li,
-ol li {
-  margin-bottom: 0.5em;
-}
-
-li ul,
-li ol {
-  margin-top: 0.5em;
-}
-
-/*
-   Media and embeds
-   ========================================================================== */
-
-/* Figures and images */
-
-figure {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-          align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 2em 0;
-
-  img,
-  iframe,
-  .fluid-width-video-wrapper {
-    margin-bottom: 1em;
-  }
-
-  img {
-    width: 100%;
-    border-radius: $border-radius;
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
-  }
-
-  > a {
-    display: block;
-  }
-
-  &.half {
-    > a,
-    > img {
-      @include breakpoint($small) {
-        width: calc(50% - 0.5em);
-      }
-    }
-
-    figcaption {
-      width: 100%;
-    }
-  }
-
-  &.third {
-    > a,
-    > img {
-      @include breakpoint($small) {
-        width: calc(33.3333% - 0.5em);
-      }
-    }
-
-    figcaption {
-      width: 100%;
-    }
-  }
-}
-
-/* Figure captions */
-
-figcaption {
-  margin-bottom: 0.5em;
-  color: mix(#fff, $text-color, 25%);
-  font-family: $caption-font-family;
-  font-size: $type-size-6;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid $light-gray;
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
-
-    &:hover {
-      color: #000;
-      border-bottom-color: #000;
-    }
-  }
+  flex-direction: column;
+  text-wrap: pretty;
 }
 
 
-/* Fix IE9 SVG bug */
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-
-/*
-   Navigation lists
-   ========================================================================== */
 
 /**
- * Removes margins, padding, and bullet points from navigation lists
- *
- * Example usage:
- * <nav>
- *    <ul>
- *      <li><a href="#link-1">Link 1</a></li>
- *      <li><a href="#link-2">Link 2</a></li>
- *      <li><a href="#link-3">Link 3</a></li>
- *    </ul>
- *  </nav>
+ * Reset some basic elements
  */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
 
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
+
+
+/**
+ * Set `margin-bottom` to maintain vertycal rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: calc($spacing-unit / 2);
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+/**
+ * Hyphenation and paragraph styles
+ */
+p {
+  hyphens: auto;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+        margin-bottom: 0;
   }
+}
+
+ul.no-list {
+  margin-left: 0;
 
   li {
     list-style: none;
   }
+}
 
-  a {
-    text-decoration: none;
-  }
+/**
+ * Links
+ */
+a {
+  color: $link-color;
+  text-decoration: none;
 
-  /* override white-space for nested lists */
-  ul li,
-  ol li {
-    margin-bottom: 0;
-  }
-
-  li ul,
-  li ol {
-    margin-top: 0;
+  &:hover {
+      opacity: .8;
+      text-decoration: underline;
   }
 }
 
-/*
-   Global animation transition
-   ========================================================================== */
 
-b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {
-  -webkit-transition: $global-transition;
-  transition: $global-transition;
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid $grey-color-lightest;
+  padding-left: calc($spacing-unit / 2);
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+
+  > :last-child {
+      margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Code formatting
+ */
+
+code {
+  color: #c35;
+  font-family: Consolas,monospace;
+}
+
+pre {
+  background-color: $grey-color-lightest;
+  border-left: 0.25rem solid #c35;
+  margin-bottom: 0.6rem;
+  margin-top: 0.2rem;
+  overflow-x: auto;
+  padding: 1rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+
+  > code {
+    color: $text-color;
+    background: none;
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+
+/**
+ * Text styling
+ */
+strong, b {
+  font-weight: 600;
+}
+
+
+/**
+ * Iframe
+ */
+iframe {
+  border: none;
+  max-width: 100%;
+}
+
+
+/* Content */
+
+.lead {
+  font-size: 1.3rem;
+}
+
+/* Print */
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+  }
+  
+  body {
+    margin: 0;
+  }
+
+  @page {
+    size: portrait;
+    margin: 12mm 12mm 12mm 12mm;
+  }
 }

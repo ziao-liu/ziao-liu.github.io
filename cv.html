@@ -1,0 +1,163 @@
+---
+layout: cv
+permalink: /cv/
+title: CV
+---
+
+<section class="container">
+
+<h1><a href="{{ absolute_url }}/">Ziao Liu</a></h1>
+
+<small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="{{ '/cv' | absolute_url }}">www.domoritz.de/cv</a>.</small>
+
+<div class="header-columns">
+  <div>
+    <p>
+      PhD Student at Zhejiang University.<br/>
+    </p>
+  </div>
+  <div>
+    <ul class="right-align">
+      <li><i class="fa-solid fa-globe muted"></i> <a href="{{ absolute_url }}/">https://www.ziaoliu.com</a></li>
+      <li><i class="fa-solid fa-envelope muted"></i> <a href="mailto:ziao_liu@outlook.com">ziao_liu@outlook.com</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<h2>Research Area</h2>
+
+<p>
+My research focuses on data visualization and human-computer interaction (HCI) within the domain of sports. Currently, I am exploring the integration of large language models (LLMs) into sports analytics, particularly applying them in tactical and strategy analysis.
+</p>
+
+
+<h2>Education</h2>
+
+{% for ed in site.data.education %}
+  <div class="date-container">
+    <span class="date">{{ ed.years | replace: "-", "–" }}</span>
+    <strong class="fill">{% if ed.degree %}{{ ed.degree }}, {% endif %}{{ ed.university }}</strong>
+    <span class="right">{{ ed.location }}</span>
+  </div>
+  {% if ed.description.size > 0 %}
+  <p>
+    {% for des in ed.description %}
+      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+    {% endfor %}
+  </p>
+  {% endif %}
+{% endfor %}
+
+
+<h2>Honors & Awards</h2>
+
+{% for award in site.data.awards %}
+  <div class="date-container">
+    <span class="date">{{ award.years | replace: "-", "–" }}</span>
+    <strong class="fill">{{ award.name }}</strong>
+    {% if award.sponsor %}<span class="right">{{ award.sponsor }}</span>{% endif %}
+  </div>
+  {% if award.description %}
+  <p class="muted">
+    {{ award.description }}
+  </p>
+  {% endif %}
+{% endfor %}
+
+
+<h2>Publications <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
+
+{% assign sorted_pubs = site.publications | reverse %}
+
+{% assign types = "Conference|Journal|Book Chapter|Demo|Workshop|Thesis" | split: "|" %}
+{% for type in types %}
+  {% assign counter = 1 %}
+  {% for pub in sorted_pubs %}
+    {% if pub.type[0] == type %}
+      {% assign counter = counter | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- <h3 class="pub-type">
+    {{ type }}
+  </h3> -->
+
+  {% for pub in sorted_pubs %}
+    {% if pub.type[0] == type %}
+      {% assign counter = counter | minus: 1 %}
+      <div class="pub">
+        <div class="ref-container">{{ type | slice: 0 }}{{ counter }}</div>
+        <strong class="fill">{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% elsif pub.arxiv %}<a href="https://arxiv.org/pdf/{{ pub.arxiv | cgi_escape }}.pdf">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</strong>
+        <div>
+          {% for author in pub.authors %}{% include person person=author %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+          {% if pub.venue or pub.description %}<i>{% if pub.description %}{{ pub.description | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}{{ pub.venue }}</i>{% if pub.venue %},{% endif %} {% endif %}{{ pub.year }}.
+
+          {% if pub.link or pub.pdf or pub.arxiv or pub.video or pub.blog or pub.slides or pub.doi %}
+            <div class="extra-links">
+            {% if pub.pdf %}
+              <a href="{{ pub.pdf }}">
+                <i class="far fa-file-pdf" aria-hidden="true"></i> PDF
+              </a>
+            {% elsif pub.arxiv %}
+              <a href="https://arxiv.org/pdf/{{ pub.arxiv | cgi_escape }}.pdf">
+                <i class="far fa-file-pdf" aria-hidden="true"></i> PDF
+              </a>
+            {% endif %}
+            {% if pub.link %}
+              <a href="{{ pub.link }}">
+                <i class="fas fa-link" aria-hidden="true"></i> Project
+              </a>
+            {% endif %}
+            {% if pub.blog %}
+              <a href="{{ pub.blog }}">
+                <i class="fas fa-newspaper" aria-hidden="true"></i> Article
+              </a>
+            {% endif %}
+            {% if pub.video %}
+              <a href="{{ pub.video }}">
+                <i class="fas fa-film" aria-hidden="true"></i> Video
+              </a>
+            {% endif %}
+            {% if pub.doi %}
+              <a href="https://www.doi2bib.org/bib/{{ pub.doi }}">
+                <i class="fas fa-book" aria-hidden="true"></i> Bibtex
+              </a>
+            {% elsif pub.arxiv %}
+              <a href="https://arxiv2bibtex.org/?q={{ pub.arxiv | cgi_escape }}">
+                <i class="fas fa-book" aria-hidden="true"></i> Bibtex
+              </a>
+            {% endif %}
+            </div>
+          {% endif %}
+
+          {% for award in pub.awards %}<strong class="award"><i class="fas fa-{% if award == "Best Paper" %}trophy{% else %}award{% endif %}" aria-hidden="true"></i> {{ award }}</strong>{% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
+<h2>Service</h2>
+
+<div class="date-container">
+  <span class="date"></span>
+  <strong class="fill">Reviewer</strong>
+  <span class="right"></span>
+</div>
+<p class="muted">
+  IEEE VIS, TVCG, EuroVis, KDD, and PacificVis.
+</p>
+
+<div class="date-container">
+  <span class="date"></span>
+  <strong class="fill">Student Volunteer</strong>
+  <span class="right"></span>
+</div>
+<p class="muted">
+  IEEE VIS 2024, ChinaVis 2022, and ChinaVis 2025.
+</p>
+
+</section>

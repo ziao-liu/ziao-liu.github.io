@@ -1,0 +1,18 @@
+{
+  "name": "homepage",
+  "compatibility_date": "2025-08-01",
+  "placement": {
+    "mode": "smart"
+  },
+  "assets": {
+    "directory": "_site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "https://ziao-liu.github.io/",
+      "custom_domain": false
+    }
+  ]
+}
