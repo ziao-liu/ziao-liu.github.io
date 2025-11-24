@@ -1,6 +1,6 @@
 {
   "name": "homepage",
-  "compatibility_date": "2024-12-01",
+  "compatibility_date": "2025-08-01",
   "placement": {
     "mode": "smart"
   },
@@ -11,8 +11,8 @@
   },
   "routes": [
     {
-      "pattern": "https://ziao-liu.github.io/",
-      "custom_domain": false
+      "pattern": "www.ziaoliu.com",
+      "custom_domain": true
     }
   ]
 }
