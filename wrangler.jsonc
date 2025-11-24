@@ -11,14 +11,8 @@
   },
   "routes": [
     {
-      "pattern": "ziaoliu.com/*",
-      "custom_domain": true,
-      "zone_name": "ziaoliu.com"
-    },
-    {
-      "pattern": "www.ziaoliu.com/*",
-      "custom_domain": true,
-      "zone_name": "ziaoliu.com"
+      "pattern": "www.ziaoliu.com",
+      "custom_domain": true
     }
   ]
 }
