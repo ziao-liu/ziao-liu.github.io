@@ -46,7 +46,16 @@ My research focuses on data visualization and human-computer interaction (HCI) w
 ##  <a href="{{ "/publications/" | relative_url }}">Publications</a>
 
 <div class="featured-publications">
-  {% assign sorted_publications = site.publications | sort: 'month' | reverse | sort: 'year' | reverse %}
+  {% assign all_pubs = site.publications %}
+  {% assign sorted_pubs = '' | split: '' %}
+  {% assign years = all_pubs | map: 'year' | uniq | sort | reverse %}
+  {% for year in years %}
+    {% assign year_pubs = all_pubs | where: 'year', year | sort: 'month' | reverse %}
+    {% for pub in year_pubs %}
+      {% assign sorted_pubs = sorted_pubs | push: pub %}
+    {% endfor %}
+  {% endfor %}
+  {% assign sorted_publications = sorted_pubs %}
   {% assign featured_publications = sorted_publications | where: 'highlight', true %}
   {% if featured_publications == empty %}
     {% assign featured_publications = sorted_publications | slice: 0, 3 %}
