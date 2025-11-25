@@ -4,15 +4,14 @@ email: ziao_liu@outlook.com
 description: > # this means to ignore newlines until "baseurl:"
   PhD Student at ZJU
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ziaoliu.com" # the base hostname & protocol for your site
-production_url: "https://ziaoliu.com"
+url: "https://www.ziaoliu.com" # the base hostname & protocol for your site
+production_url: "https://www.ziaoliu.com"
 github_username: ziao-liu
 permalink: /blog/:year/:month/:title.html
 
 
 sass:
   style: compressed
-  sass_dir: _sass
 
 collections:
   publications:

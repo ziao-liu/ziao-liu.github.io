@@ -9,7 +9,7 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm Ziao Liu (刘子奥), a third-year PhD student at Zhejiang University (ZJU). I'm a member of the <a href='https://zjuidg.org'>ZJUIDG</a> Lab, co-supervised by Prof. {% include person person="Xiao Xie" %}, Prof. {% include person person="Hui Zhang" %}, and Prof. {% include person person="Yingcai Wu" %}. I received my bachelor's degree of Data Science and Big Data Technology at Chongqing Univeristy (CQU), where I was supervised by Prof. {% include person person="Haibo Hu" %} and was part of the CQU-VIVA Lab.
+I'm Ziao Liu , a third-year PhD student at Zhejiang University (ZJU). I'm a member of the <a href='https://zjuidg.org'>ZJUIDG</a> Lab, co-supervised by Prof. {% include person person="Xiao Xie" %}, Prof. {% include person person="Hui Zhang" %}, and Prof. {% include person person="Yingcai Wu" %}. I received my bachelor's degree of Data Science and Big Data Technology at Chongqing Univeristy (CQU), where I was supervised by Prof. {% include person person="Haibo Hu" %} and was part of the CQU-VIVA Lab.
 
 My research focuses on data visualization and human-computer interaction (HCI) within the domain of sports. Currently, I am exploring the integration of large language models (LLMs) into sports analytics, particularly applying them in tactical and strategy analysis.
 
